@@ -1,0 +1,46 @@
+BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          backgroundColor: AppColors.primary,
+
+          selectedItemColor: AppColors.bgColor,
+          unselectedItemColor: const Color(0xff526480),
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          onTap: (int index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/home.svg'),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/fav.svg'),
+              label: 'Favorite',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/plus.svg'),
+              label: 'Add',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/chat.svg'),
+              label: 'Message',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/profile.svg'),
+              label: 'Profile',
+            ),
+          ],
+        ),
+
+        helper function to mock server data
+  final List<String> users = [];
+  mockServerUsers() {
+    for (int i = 0; i < 40; i++) {
+      users.add('User number $i');
+    }
+    return users;
+  }
